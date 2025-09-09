@@ -8,5 +8,11 @@ function throttle(func, limit) {
             inThrottle = true;
             setTimeout(() => (inThrottle = false), limit);
         }
-    }
+    };
+}
+
+let scrollCount = 0;
+function handleScroll() {
+  scrollCount++;
+  document.getElementById("scrollCount").textContent = scrollCount;
 }
