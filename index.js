@@ -4,7 +4,7 @@ function throttle(func, limit) {
         const args = arguments;
         const context = this;
         if (!inThrottle) {
-            func.args(context, args);
+            func.apply(context, args);
             inThrottle = true;
             setTimeout(() => (inThrottle = false), limit);
         }
@@ -16,3 +16,5 @@ function handleScroll() {
   scrollCount++;
   document.getElementById("scrollCount").textContent = scrollCount;
 }
+
+window.addEventListener("scroll", throttle(handleScroll, 200));
