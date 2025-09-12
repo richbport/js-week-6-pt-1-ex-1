@@ -36,4 +36,6 @@ function handleScroll() {
     document.getElementById("scrollCount").textContent = scrollCount;
 }
 
+// window.addEventListener("scroll", throttle(handleScroll, 200));
+
 window.addEventListener("scroll", throttle(handleScroll, 200));
