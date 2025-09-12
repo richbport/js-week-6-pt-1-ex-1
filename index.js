@@ -16,6 +16,11 @@ function throttle(func, limit) {
     return function () {
         const args = arguments;
         const context = this;
+        if (!inThrottle) {
+            func.apply(context, args);
+            inThrottle = true;
+            setTimeout(() => (inThrottle = false), limit);
+        }
     }
 }
 
