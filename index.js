@@ -24,10 +24,16 @@ function throttle(func, limit) {
     }
 }
 
+// let scrollCount = 0;
+// function handleScroll() {
+//   scrollCount++;
+//   document.getElementById("scrollCount").textContent = scrollCount;
+// }
+
 let scrollCount = 0;
 function handleScroll() {
-  scrollCount++;
-  document.getElementById("scrollCount").textContent = scrollCount;
+    scrollCount++;
+    document.getElementById("scrollCount").textContent = scrollCount;
 }
 
 window.addEventListener("scroll", throttle(handleScroll, 200));
